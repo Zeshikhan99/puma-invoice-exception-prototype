@@ -1,0 +1,326 @@
+[
+  {
+    "case": "clean_match",
+    "invoice_id": "INV-101",
+    "synthetic": true,
+    "phase": "shadow",
+    "flags": [],
+    "tier": 1,
+    "status": "would_release_clean_match",
+    "owner": "A4 fixed rules",
+    "due_alert_to_ap_lead": false,
+    "investigation_evidence": [],
+    "draft_advice": null,
+    "payment_executed": false,
+    "master_data_changed": false,
+    "audit": [
+      {
+        "component": "A1",
+        "action": "receive_structured_fixture",
+        "invoice_id": "INV-101"
+      },
+      {
+        "component": "A2",
+        "action": "read_tool",
+        "tool": "purchase_orders",
+        "key": "PO-101",
+        "found": true
+      },
+      {
+        "component": "A2",
+        "action": "read_tool",
+        "tool": "goods_receipts",
+        "key": "PO-101",
+        "found": true
+      },
+      {
+        "component": "A4",
+        "action": "read_tool",
+        "tool": "suppliers",
+        "key": "SUP-1",
+        "found": true
+      },
+      {
+        "component": "A4",
+        "action": "read_tool",
+        "tool": "prior_invoices",
+        "key": "INV-101",
+        "found": false
+      },
+      {
+        "component": "A4",
+        "action": "route_and_log",
+        "tier": 1,
+        "status": "would_release_clean_match",
+        "owner": "A4 fixed rules",
+        "due_alert_to_ap_lead": false
+      }
+    ]
+  },
+  {
+    "case": "price_6_percent_high",
+    "invoice_id": "INV-102",
+    "synthetic": true,
+    "phase": "shadow",
+    "flags": [
+      "price_variance"
+    ],
+    "tier": 2,
+    "status": "pending_human_resolution_no_release",
+    "owner": "AP specialist",
+    "due_alert_to_ap_lead": false,
+    "investigation_evidence": [
+      {
+        "tool": "contract_prices",
+        "key": "PO-102",
+        "result": {
+          "approved_amendment": false
+        }
+      }
+    ],
+    "draft_advice": "No approved price amendment; ask buyer to verify and AP to re-match.",
+    "payment_executed": false,
+    "master_data_changed": false,
+    "audit": [
+      {
+        "component": "A1",
+        "action": "receive_structured_fixture",
+        "invoice_id": "INV-102"
+      },
+      {
+        "component": "A2",
+        "action": "read_tool",
+        "tool": "purchase_orders",
+        "key": "PO-102",
+        "found": true
+      },
+      {
+        "component": "A2",
+        "action": "read_tool",
+        "tool": "goods_receipts",
+        "key": "PO-102",
+        "found": true
+      },
+      {
+        "component": "A4",
+        "action": "read_tool",
+        "tool": "suppliers",
+        "key": "SUP-1",
+        "found": true
+      },
+      {
+        "component": "A4",
+        "action": "read_tool",
+        "tool": "prior_invoices",
+        "key": "INV-102",
+        "found": false
+      },
+      {
+        "component": "A3",
+        "action": "read_tool",
+        "tool": "contract_prices",
+        "key": "PO-102",
+        "found": true
+      },
+      {
+        "component": "A3",
+        "action": "draft_advice",
+        "selected_tools": [
+          "contract_prices"
+        ],
+        "advice": "No approved price amendment; ask buyer to verify and AP to re-match."
+      },
+      {
+        "component": "A4",
+        "action": "route_and_log",
+        "tier": 2,
+        "status": "pending_human_resolution_no_release",
+        "owner": "AP specialist",
+        "due_alert_to_ap_lead": false
+      }
+    ]
+  },
+  {
+    "case": "suspected_duplicate",
+    "invoice_id": "INV-103",
+    "synthetic": true,
+    "phase": "shadow",
+    "flags": [
+      "duplicate"
+    ],
+    "tier": 2,
+    "status": "pending_human_resolution_no_release",
+    "owner": "AP specialist",
+    "due_alert_to_ap_lead": true,
+    "investigation_evidence": [
+      {
+        "tool": "prior_invoices",
+        "key": "INV-103",
+        "result": {
+          "supplier": "SUP-1",
+          "amount_eur": 9600
+        }
+      }
+    ],
+    "draft_advice": "Hold; AP checks the prior invoice and any payment record.",
+    "payment_executed": false,
+    "master_data_changed": false,
+    "audit": [
+      {
+        "component": "A1",
+        "action": "receive_structured_fixture",
+        "invoice_id": "INV-103"
+      },
+      {
+        "component": "A2",
+        "action": "read_tool",
+        "tool": "purchase_orders",
+        "key": "PO-103",
+        "found": true
+      },
+      {
+        "component": "A2",
+        "action": "read_tool",
+        "tool": "goods_receipts",
+        "key": "PO-103",
+        "found": true
+      },
+      {
+        "component": "A4",
+        "action": "read_tool",
+        "tool": "suppliers",
+        "key": "SUP-1",
+        "found": true
+      },
+      {
+        "component": "A4",
+        "action": "read_tool",
+        "tool": "prior_invoices",
+        "key": "INV-103",
+        "found": true
+      },
+      {
+        "component": "A3",
+        "action": "read_tool",
+        "tool": "prior_invoices",
+        "key": "INV-103",
+        "found": true
+      },
+      {
+        "component": "A3",
+        "action": "draft_advice",
+        "selected_tools": [
+          "prior_invoices"
+        ],
+        "advice": "Hold; AP checks the prior invoice and any payment record."
+      },
+      {
+        "component": "A4",
+        "action": "route_and_log",
+        "tier": 2,
+        "status": "pending_human_resolution_no_release",
+        "owner": "AP specialist",
+        "due_alert_to_ap_lead": true
+      }
+    ]
+  },
+  {
+    "case": "changed_bank_details",
+    "invoice_id": "INV-104",
+    "synthetic": true,
+    "phase": "shadow",
+    "flags": [
+      "bank_change"
+    ],
+    "tier": 3,
+    "status": "pending_human_resolution_no_release",
+    "owner": "AP lead",
+    "due_alert_to_ap_lead": false,
+    "investigation_evidence": [
+      {
+        "tool": "suppliers",
+        "key": "SUP-2",
+        "result": {
+          "approved": true,
+          "bank_token": "BANK-2"
+        }
+      },
+      {
+        "tool": "bank_change_requests",
+        "key": "SUP-2",
+        "result": {
+          "approved": false
+        }
+      }
+    ],
+    "draft_advice": "Hold; no approved bank-change request; AP lead verifies independently.",
+    "payment_executed": false,
+    "master_data_changed": false,
+    "audit": [
+      {
+        "component": "A1",
+        "action": "receive_structured_fixture",
+        "invoice_id": "INV-104"
+      },
+      {
+        "component": "A2",
+        "action": "read_tool",
+        "tool": "purchase_orders",
+        "key": "PO-104",
+        "found": true
+      },
+      {
+        "component": "A2",
+        "action": "read_tool",
+        "tool": "goods_receipts",
+        "key": "PO-104",
+        "found": true
+      },
+      {
+        "component": "A4",
+        "action": "read_tool",
+        "tool": "suppliers",
+        "key": "SUP-2",
+        "found": true
+      },
+      {
+        "component": "A4",
+        "action": "read_tool",
+        "tool": "prior_invoices",
+        "key": "INV-104",
+        "found": false
+      },
+      {
+        "component": "A3",
+        "action": "read_tool",
+        "tool": "suppliers",
+        "key": "SUP-2",
+        "found": true
+      },
+      {
+        "component": "A3",
+        "action": "read_tool",
+        "tool": "bank_change_requests",
+        "key": "SUP-2",
+        "found": true
+      },
+      {
+        "component": "A3",
+        "action": "draft_advice",
+        "selected_tools": [
+          "suppliers",
+          "bank_change_requests"
+        ],
+        "advice": "Hold; no approved bank-change request; AP lead verifies independently."
+      },
+      {
+        "component": "A4",
+        "action": "route_and_log",
+        "tier": 3,
+        "status": "pending_human_resolution_no_release",
+        "owner": "AP lead",
+        "due_alert_to_ap_lead": false
+      }
+    ]
+  }
+]

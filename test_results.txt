@@ -1,0 +1,10 @@
+test_four_cases_and_read_only_boundary (test_demo.WorkflowTests.test_four_cases_and_read_only_boundary) ... ok
+test_only_bounded_read_tools (test_demo.WorkflowTests.test_only_bounded_read_tools) ... ok
+test_pilot_release_is_only_simulated_and_only_tier_one (test_demo.WorkflowTests.test_pilot_release_is_only_simulated_and_only_tier_one) ... ok
+test_price_correction_does_not_release_without_ap_approval (test_demo.WorkflowTests.test_price_correction_does_not_release_without_ap_approval) ... ok
+test_price_correction_requires_human_steps_and_rematch (test_demo.WorkflowTests.test_price_correction_requires_human_steps_and_rematch) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

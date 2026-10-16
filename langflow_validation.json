@@ -1,0 +1,63 @@
+{
+  "langflow_version": "1.8.0",
+  "flow_import_http_status": 201,
+  "flow_name": "PUMA invoice exception pilot - connected review flow",
+  "node_count": 7,
+  "edge_count": 6,
+  "agent_max_iterations": 5,
+  "custom_read_only_tools": {
+    "Contract price": {
+      "key": "PO-102",
+      "result": {
+        "source": "contract_prices",
+        "key": "PO-102",
+        "record": {
+          "approved_amendment": false,
+          "po_amount_eur": 10000
+        },
+        "read_only": true
+      }
+    },
+    "Prior invoice": {
+      "key": "INV-103",
+      "result": {
+        "source": "prior_invoices",
+        "key": "INV-103",
+        "record": {
+          "supplier_id": "SUP-1",
+          "amount_eur": 9600
+        },
+        "read_only": true
+      }
+    },
+    "Bank change request": {
+      "key": "SUP-2",
+      "result": {
+        "source": "bank_change_requests",
+        "key": "SUP-2",
+        "record": {
+          "approved": false,
+          "request_id": "REQ-77"
+        },
+        "read_only": true
+      }
+    },
+    "Goods receipt": {
+      "key": "PO-101",
+      "result": {
+        "source": "goods_receipts",
+        "key": "PO-101",
+        "record": {
+          "received": true
+        },
+        "read_only": true
+      }
+    }
+  },
+  "component_methods_executed": true,
+  "live_llm_tool_trace_available": false,
+  "reason": "No model provider credential in validation environment",
+  "graph_attempt": "Stopped at Agent credential check; no outdated-component warning",
+  "editor_screenshot_captured": true,
+  "editor_screenshot_is_live_model_run": false
+}

@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "buyer_review": {"po_price_confirmed": true, "actor": "fictional buyer"},
+  "supplier_correction": {
+    "original_invoice_id": "INV-102",
+    "invoice_id": "INV-102-R1",
+    "amount_eur": 10000
+  },
+  "ap_approval": {"approved": true, "actor": "fictional AP specialist"}
+}

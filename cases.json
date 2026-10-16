@@ -1,0 +1,42 @@
+[
+  {
+    "case": "clean_match",
+    "invoice_id": "INV-101",
+    "supplier_id": "SUP-1",
+    "po_id": "PO-101",
+    "amount_eur": 9800,
+    "bank_token": "BANK-1",
+    "extraction_confidence": 0.99,
+    "days_to_due": 14
+  },
+  {
+    "case": "price_6_percent_high",
+    "invoice_id": "INV-102",
+    "supplier_id": "SUP-1",
+    "po_id": "PO-102",
+    "amount_eur": 10600,
+    "bank_token": "BANK-1",
+    "extraction_confidence": 0.99,
+    "days_to_due": 12
+  },
+  {
+    "case": "suspected_duplicate",
+    "invoice_id": "INV-103",
+    "supplier_id": "SUP-1",
+    "po_id": "PO-103",
+    "amount_eur": 9600,
+    "bank_token": "BANK-1",
+    "extraction_confidence": 0.99,
+    "days_to_due": 4
+  },
+  {
+    "case": "changed_bank_details",
+    "invoice_id": "INV-104",
+    "supplier_id": "SUP-2",
+    "po_id": "PO-104",
+    "amount_eur": 12000,
+    "bank_token": "BANK-NEW",
+    "extraction_confidence": 0.99,
+    "days_to_due": 8
+  }
+]

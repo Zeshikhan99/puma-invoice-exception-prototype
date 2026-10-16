@@ -1,0 +1,50 @@
+{
+  "case": "B correction loop",
+  "synthetic": true,
+  "events": [
+    {
+      "actor": "A2",
+      "action": "mismatch",
+      "result": "price 6% above PO"
+    },
+    {
+      "actor": "A3",
+      "action": "read-only investigation",
+      "result": "No approved price amendment; ask buyer to verify and AP to re-match."
+    },
+    {
+      "actor": "Buyer",
+      "action": "simulated human review",
+      "result": "PO price confirmed"
+    },
+    {
+      "actor": "Supplier",
+      "action": "simulated correction",
+      "result": "replacement invoice for EUR 10,000"
+    },
+    {
+      "actor": "AP specialist",
+      "action": "simulated approval",
+      "result": "correction accepted"
+    },
+    {
+      "actor": "A2",
+      "action": "re-match",
+      "result": "clean match"
+    },
+    {
+      "actor": "A4",
+      "action": "release",
+      "result": "fictitious payment queue only"
+    }
+  ],
+  "before": {
+    "tier": 2,
+    "status": "pending_human_resolution_no_release"
+  },
+  "after": {
+    "tier": 1,
+    "status": "released_to_simulated_payment_queue",
+    "payment_executed": false
+  }
+}
