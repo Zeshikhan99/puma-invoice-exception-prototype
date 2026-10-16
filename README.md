@@ -14,7 +14,6 @@ This package uses fictional invoices and fixture records. It connects to no PUMA
 - `case_b_resolution.json` — fictional correction and approval loop.
 - `langflow_validation.json` — import and tool-component checks performed with Langflow 1.8.0.
 - `PUMA_Langflow_Flow_Screenshot.png` — actual Langflow editor capture of the connected flow. It does not show a model run.
-- `SOURCE_CHECK.md` — link, claim and arithmetic checks, including limits of the evidence.
 
 ## Langflow setup
 
@@ -38,6 +37,6 @@ The five tests cover four routes, read-only permissions, no real payment, explic
 
 ## Citation and AI use
 
-Halstrick, L. (2026). *PUMA invoice-exception prototype* [Computer software and data]. https://github.com/Zeshikhan99/zeshii
+Halstrick, L. (2026). *PUMA invoice-exception prototype* [Computer software and data]. https://github.com/Zeshikhan99/puma-invoice-exception-prototype
 
 The PowerPoint Appendix D documents the prototype, tests, results and AI use. The author used Claude for source research, drafting and critique. ChatGPT assisted with slide and note editing, process and financial checks, source and APA checks, Langflow configuration, and offline Python code and tests. All AI-generated content was reviewed and verified by the author. The presentation identifies the Python replay separately from an unrun Langflow model.
